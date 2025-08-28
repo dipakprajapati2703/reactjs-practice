@@ -156,3 +156,4 @@ Create `/hooks-examples` page with sections (one per bullet):
 - MDN (JavaScript fundamentals relevant to hooks)  
   - Closures: <https://developer.mozilla.org/docs/Web/JavaScript/Closures>  
   - Event loop & tasks (mental model for async effects): <https://developer.mozilla.org/docs/Web/JavaScript/Event_loop>
+

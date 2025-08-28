@@ -28,6 +28,7 @@ This React application serves as a **learning sandbox** that demonstrates:
   - **[step-0-es6.md](./examples/step-0-es6.md)** - ES6+ JavaScript essentials
   - **[step-1-props.md](./examples/step-1-props.md)** - React props fundamentals
   - **[step-2-state.md](./examples/step-2-state.md)** - React state management
+  - **[step-3-hooks.md](./examples/step-3-hooks.md)** - React hooks patterns
 
 ### **Contributing**
 - **[🤝 Contributing Guide](./CONTRIBUTING.md)** - How to contribute to the project

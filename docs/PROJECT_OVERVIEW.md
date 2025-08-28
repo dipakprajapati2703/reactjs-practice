@@ -1,6 +1,6 @@
 # 🚀 Project Overview
 
-A modern React application built with Vite, featuring React Router for navigation, ES6 examples, and props demonstrations. This project serves as a learning platform for React concepts and modern JavaScript features.
+A modern React application built with Vite, featuring React Router for navigation, ES6 examples, props demonstrations, state management, and comprehensive hooks examples. This project serves as a learning platform for React concepts and modern JavaScript features.
 
 ## 🎯 What This Project Demonstrates
 
@@ -9,6 +9,7 @@ This is a **React.js Demo Project** that demonstrates various React concepts inc
 - **React Router** for client-side navigation
 - **ES6+ JavaScript features** with practical examples
 - **Props and state management** examples
+- **Advanced React hooks** patterns and custom hooks
 - **Modern development workflow** with Vite build tool
 
 ## 📁 Project Structure
@@ -31,7 +32,8 @@ reacjs-demo/
 │   └── examples/          # 📚 Step-by-step learning examples
 │       ├── step-0-es6.md  # ES6+ JavaScript essentials
 │       ├── step-1-props.md # React props fundamentals
-│       └── step-2-state.md # React state management
+│       ├── step-2-state.md # React state management
+│       └── step-3-hooks.md # React hooks patterns
 ├── src/                   # Source code directory
 │   ├── assets/            # Static assets (images, icons)
 │   │   └── react.svg      # React logo
@@ -43,6 +45,8 @@ reacjs-demo/
 │   │   ├── Home.jsx       # Homepage component
 │   │   ├── Es6Examples.jsx # ES6 features demonstration
 │   │   ├── PropsExamples.jsx # React props examples
+│   │   ├── StateExamples.jsx # React state examples
+│   │   ├── HooksExamples.jsx # React hooks examples
 │   │   └── NotFound.jsx   # 404 error page
 │   ├── routes/            # Routing configuration
 │   │   └── config.jsx     # Route definitions and navigation config
@@ -50,7 +54,8 @@ reacjs-demo/
 │   └── examples/          # 📚 Step-by-step learning examples
 │       ├── step-0-es6.md  # ES6+ JavaScript essentials
 │       ├── step-1-props.md # React props fundamentals
-│       └── step-2-state.md # React state management
+│       ├── step-2-state.md # React state management
+│       └── step-3-hooks.md # React hooks patterns
 │   ├── App.jsx            # Main application component
 │   ├── App.css            # Application-level styles
 │   ├── main.jsx           # Application entry point
@@ -85,7 +90,7 @@ reacjs-demo/
 ## 🚀 Learning Resources
 
 This project demonstrates:
-- **React Hooks** (useState, useEffect)
+- **React Hooks** (useState, useEffect, useRef, useContext, useMemo, useCallback)
 - **React Router** for navigation
 - **Component composition** and props
 - **Modern JavaScript** (ES6+) features

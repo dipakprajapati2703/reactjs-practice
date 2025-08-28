@@ -30,14 +30,23 @@ src/examples/
 │   ├── Card.jsx           # Object props
 │   ├── ActionButton.jsx   # Event handler props
 │   └── ProfileCard.jsx    # Multiple props
-└── state-example/          # React state management
-    ├── README.md          # State examples guide
+├── state-example/          # React state management
+│   ├── README.md          # State examples guide
+│   ├── index.js           # Component exports
+│   ├── CounterExample.jsx # Basic useState with counter
+│   ├── ToggleExample.jsx  # Boolean state for toggles
+│   ├── FormExample.jsx    # Controlled form inputs
+│   ├── ListExample.jsx    # Array state management
+│   └── ObjectExample.jsx  # Object state updates
+└── hooks-example/          # React hooks patterns
+    ├── README.md          # Hooks examples guide
     ├── index.js           # Component exports
-    ├── CounterExample.jsx # Basic useState with counter
-    ├── ToggleExample.jsx  # Boolean state for toggles
-    ├── FormExample.jsx    # Controlled form inputs
-    ├── ListExample.jsx    # Array state management
-    └── ObjectExample.jsx  # Object state updates
+    ├── useEffectExample.jsx # Side effects and cleanup
+    ├── useRefExample.jsx  # DOM manipulation and refs
+    ├── useContextExample.jsx # Context API and providers
+    ├── useMemoExample.jsx # Performance optimization
+    ├── useCallbackExample.jsx # Stable function references
+    └── CustomHooksExample.jsx # Custom hooks patterns
 ```
 
 ## 🎯 What Each Directory Contains
@@ -61,6 +70,14 @@ src/examples/
 - **Form handling** and user interactions
 - **Array and object** state management patterns
 
+### **`hooks-example/` - React Hooks Patterns**
+- **useEffect hook** for side effects and cleanup
+- **useRef hook** for DOM manipulation and instance variables
+- **useContext hook** for global state and avoiding prop drilling
+- **useMemo hook** for performance optimization and memoization
+- **useCallback hook** for stable function references
+- **Custom hooks** for reusable logic patterns
+
 ## 🚀 How to Use These Examples
 
 ### **Learning Flow**
@@ -74,6 +91,7 @@ src/examples/
 - **ES6 Examples**: Visit `/es6-examples` route
 - **Props Examples**: Visit `/props-example` route
 - **State Examples**: Visit `/state-examples` route
+- **Hooks Examples**: Visit `/hooks-examples` route
 
 ### **Code Exploration**
 - **Start with README files** in each directory

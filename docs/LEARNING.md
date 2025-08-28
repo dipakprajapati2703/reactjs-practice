@@ -75,10 +75,35 @@ This project is designed as a **hands-on sandbox** to learn React from **Beginne
 - Pairs naturally with props and lifted state
 
 **Practice in the app:**
-- Create `/state-examples` route (planned)
+- Visit `/state-examples` route
 - Implement counters, toggles, and forms
 - Practice immutable object and array updates
 - Experiment with state lifting
+
+---
+
+### **Step 3: React Hooks**
+📁 [examples/step-3-hooks.md](./examples/step-3-hooks.md)
+
+**What you'll learn:**
+- **useEffect** for side effects and cleanup
+- **useRef** for DOM manipulation and instance variables
+- **useContext** for global state and avoiding prop drilling
+- **useMemo** for performance optimization and memoization
+- **useCallback** for stable function references
+- **Custom hooks** for reusable logic patterns
+
+**Why it matters:**
+- Hooks are the foundation of modern React development
+- Proper effect management prevents memory leaks
+- Performance optimization with memoization
+- Reusable logic with custom hooks
+
+**Practice in the app:**
+- Visit `/hooks-examples` route
+- Experiment with different hook combinations
+- Build custom hooks for common patterns
+- Practice performance optimization techniques
 
 ---
 

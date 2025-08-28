@@ -33,6 +33,7 @@ This project includes comprehensive documentation organized into focused guides:
 - **[step-0-es6.md](./docs/examples/step-0-es6.md)** - ES6+ JavaScript essentials
 - **[step-1-props.md](./docs/examples/step-1-props.md)** - React props fundamentals
 - **[step-2-state.md](./docs/examples/step-2-state.md)** - React state management
+- **[step-3-hooks.md](./docs/examples/step-3-hooks.md)** - React hooks patterns
 
 ### **Contributing**
 - **[🤝 Contributing Guide](./docs/CONTRIBUTING.md)** - How to contribute to the project
@@ -47,7 +48,7 @@ This project includes comprehensive documentation organized into focused guides:
 ## 🎯 What You'll Learn
 
 This project demonstrates:
-- **React Hooks** (useState, useEffect)
+- **React Hooks** (useState, useEffect, useRef, useContext, useMemo, useCallback)
 - **React Router** for client-side navigation
 - **Component composition** and props
 - **Modern JavaScript** (ES6+) features

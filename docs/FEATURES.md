@@ -19,6 +19,8 @@ This document provides a detailed overview of the key features and capabilities 
 - **Component composition** for flexible UI layouts
 - **Consistent component structure** across the application
 - **CSS modules** for component-specific styling
+- **Advanced hooks patterns** with useEffect, useRef, useContext, useMemo, useCallback
+- **Custom hooks** for reusable logic and state management
 
 ### Development Experience
 - **Fast hot reload** during development
@@ -98,6 +100,8 @@ This document provides a detailed overview of the key features and capabilities 
 - **Practice checklists** for each learning step
 - **Real-world patterns** used in production applications
 - **Interactive demonstrations** of React concepts
+- **Hooks mastery** from basic useEffect to advanced custom hooks
+- **Performance optimization** techniques with useMemo and useCallback
 
 ### Documentation Integration
 - **Comprehensive documentation** for each feature

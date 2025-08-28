@@ -31,7 +31,13 @@ src/examples/
 │   ├── ActionButton.jsx   # Event handler props
 │   └── ProfileCard.jsx    # Multiple props
 └── state-example/          # React state management
-    └── README.md          # State examples guide (coming soon)
+    ├── README.md          # State examples guide
+    ├── index.js           # Component exports
+    ├── CounterExample.jsx # Basic useState with counter
+    ├── ToggleExample.jsx  # Boolean state for toggles
+    ├── FormExample.jsx    # Controlled form inputs
+    ├── ListExample.jsx    # Array state management
+    └── ObjectExample.jsx  # Object state updates
 ```
 
 ## 🎯 What Each Directory Contains
@@ -48,11 +54,12 @@ src/examples/
 - **Conditional rendering** based on props
 - **Component composition** examples
 
-### **`state-example/` - State Management (Planned)**
-- **useState hook** examples
-- **State lifting** patterns
+### **`state-example/` - State Management**
+- **useState hook** examples with counter, toggles, and forms
+- **State lifting** patterns and component communication
 - **Immutable updates** for objects and arrays
 - **Form handling** and user interactions
+- **Array and object** state management patterns
 
 ## 🚀 How to Use These Examples
 
@@ -66,7 +73,7 @@ src/examples/
 ### **In the Application**
 - **ES6 Examples**: Visit `/es6-examples` route
 - **Props Examples**: Visit `/props-example` route
-- **State Examples**: Will be available at `/state-examples` (planned)
+- **State Examples**: Visit `/state-examples` route
 
 ### **Code Exploration**
 - **Start with README files** in each directory

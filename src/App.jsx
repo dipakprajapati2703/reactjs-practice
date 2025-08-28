@@ -1,13 +1,10 @@
 /**
  * @component App
- * @description App shell: header + routes. Home route preserves Vite default UI.
+ * @description App shell: persistent header + route table from config.
  */
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import Home from "./pages/Home.jsx";
-import Es6ExamplesPage from "./pages/Es6Examples.jsx";
-import PropsExamplesPage from "./pages/PropsExamples.jsx";
-import NotFound from "./pages/NotFound.jsx";
+import { routes, notFoundRoute } from "./routes/config.jsx";
 
 export default function App() {
   return (
@@ -15,10 +12,14 @@ export default function App() {
       <Header />
       <main style={{ padding: 16 }}>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/es6-examples" element={<Es6ExamplesPage />} />
-          <Route path="/props-example" element={<PropsExamplesPage />} />
-          <Route path="*" element={<NotFound />} />
+          {routes.map((r) =>
+            r.index ? (
+              <Route key="__index__" index element={r.element} />
+            ) : (
+              <Route key={r.path} path={r.path} element={r.element} />
+            )
+          )}
+          <Route path={notFoundRoute.path} element={notFoundRoute.element} />
         </Routes>
       </main>
     </div>

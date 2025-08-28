@@ -2,6 +2,8 @@
 
 This repository is a hands-on sandbox to learn React from **Beginner → Intermediate** using Vite + React + React Router.
 
+> 📚 **For a comprehensive documentation overview, see [INDEX.md](./INDEX.md)**
+
 ## Live Routes in the App
 
 - `/` – Vite starter home (unchanged)
@@ -21,3 +23,6 @@ This repository is a hands-on sandbox to learn React from **Beginner → Interme
 npm install
 npm run dev
 # open the URL shown in the terminal (e.g., http://localhost:5173)
+```
+
+> 📖 **For detailed installation and setup instructions, see [INSTALLATION.md](./INSTALLATION.md)**

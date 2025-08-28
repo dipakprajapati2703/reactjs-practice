@@ -17,6 +17,13 @@ This is a **React.js Demo Project** that demonstrates various React concepts inc
 reacjs-demo/
 ├── public/                 # Static assets served directly
 │   └── vite.svg           # Vite logo
+├── docs/                  # 📚 Comprehensive learning documentation
+│   ├── README.md          # Documentation index and roadmap
+│   ├── INDEX.md           # Complete documentation overview
+│   ├── INSTALLATION.md    # Detailed installation guide
+│   ├── step-0-es6.md      # ES6+ JavaScript essentials
+│   ├── step-1-props.md    # React props fundamentals
+│   └── step-2-state.md    # React state management
 ├── src/                   # Source code directory
 │   ├── assets/            # Static assets (images, icons)
 │   │   └── react.svg      # React logo
@@ -46,37 +53,29 @@ reacjs-demo/
 
 ## 🛠️ Installation
 
+> 📖 **For detailed installation instructions, see [docs/INSTALLATION.md](./docs/INSTALLATION.md)**
+
 ### Prerequisites
 - **Node.js** (version 16 or higher)
 - **npm** or **yarn** package manager
 
-### Setup Steps
+### Quick Setup
 
-1. **Clone or download the project**
-   ```bash
-   # If cloning from a repository
-   git clone <repository-url>
-   cd reacjs-demo
-   
-   # Or navigate to your project directory
-   cd /path/to/reacjs-demo
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
    ```bash
    npm install
    # or
    yarn install
    ```
 
-3. **Start development server**
+2. **Start development server**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-4. **Open your browser**
+3. **Open your browser**
    - Navigate to `http://localhost:5173` (or the URL shown in terminal)
    - The application should now be running!
 
@@ -175,15 +174,49 @@ This project demonstrates:
 - **CSS-in-JS** and styling approaches
 - **Build tooling** with Vite
 
+## 📖 Documentation
+
+> 📚 **Complete documentation index: [docs/INDEX.md](./docs/INDEX.md)**
+
+### Learning Roadmap
+This project includes a comprehensive **step-by-step learning path** from beginner to intermediate React concepts:
+
+1. **[Step 0: ES6+ JavaScript Essentials](./docs/step-0-es6.md)**
+   - Modern JavaScript features essential for React
+   - Block-scoped declarations, arrow functions, destructuring
+   - Template literals, spread/rest operators, array methods
+   - ES modules, promises, and async/await
+
+2. **[Step 1: React Props](./docs/step-1-props.md)**
+   - Component inputs and data flow
+   - Read-only props, children prop, event handlers
+   - Component composition and reusability
+   - Avoiding prop drilling with Context
+
+3. **[Step 2: React State](./docs/step-2-state.md)**
+   - Local component state with useState
+   - Immutable updates and functional updates
+   - State lifting and derived values
+   - State preservation and reset behavior
+
+### Documentation Structure
+- **`docs/README.md`** - Learning roadmap overview
+- **`docs/INDEX.md`** - Complete documentation index
+- **`docs/INSTALLATION.md`** - Detailed installation and setup guide
+- Each step includes practice checklists and official references
+- Designed for hands-on learning with the live application
+
 ## 🚀 Next Steps
 
 To extend this project:
-1. Add new routes in `src/routes/config.jsx`
-2. Create new page components in `src/pages/`
-3. Add new reusable components in `src/components/`
-4. Implement state management (Context API, Redux, Zustand)
-5. Add testing with Jest and React Testing Library
-6. Implement authentication and protected routes
+1. **Follow the Learning Roadmap** - Start with `docs/step-0-es6.md` and progress through each step
+2. **Add new routes** in `src/routes/config.jsx`
+3. **Create new page components** in `src/pages/`
+4. **Add new reusable components** in `src/components/`
+5. **Implement state management** (Context API, Redux, Zustand)
+6. **Add testing** with Jest and React Testing Library
+7. **Implement authentication** and protected routes
+8. **Contribute to documentation** by adding new learning steps or improving existing ones
 
 ## 🤝 Contributing
 

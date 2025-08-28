@@ -3,7 +3,7 @@
  * @description App shell: persistent header + route table from config.
  */
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import { routes, notFoundRoute } from "./routes/config.jsx";
 
 export default function App() {

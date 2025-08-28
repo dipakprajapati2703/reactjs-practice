@@ -1,0 +1,79 @@
+/* Sticky header shell */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Inner container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Main list */
+.navList {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap; /* wraps gracefully on smaller viewports */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links */
+.link {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  line-height: 1.2;
+  display: inline-block;
+  border: 1px solid transparent;
+  color: #1f2937;
+  background: transparent;
+}
+
+.linkActive {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+}
+
+/* “More” overflow menu */
+.more {
+  position: relative;
+}
+.moreSummary {
+  list-style: none;
+  cursor: pointer;
+}
+
+/* Dropdown panel */
+.dropdown {
+  margin: 8px 0 0;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dropdownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownItem {
+  margin: 4px 0;
+}

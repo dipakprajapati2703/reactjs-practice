@@ -47,7 +47,10 @@ reacjs-demo/
 │   ├── routes/            # Routing configuration
 │   │   └── config.jsx     # Route definitions and navigation config
 │   ├── sections/          # Additional component sections
-│   ├── props-examples/    # Props-related examples
+│   └── examples/          # 📚 Step-by-step learning examples
+│       ├── step-0-es6.md  # ES6+ JavaScript essentials
+│       ├── step-1-props.md # React props fundamentals
+│       └── step-2-state.md # React state management
 │   ├── App.jsx            # Main application component
 │   ├── App.css            # Application-level styles
 │   ├── main.jsx           # Application entry point

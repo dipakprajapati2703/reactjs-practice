@@ -11,7 +11,7 @@ import {
   Badge,
   Price,
   Toolbar,
-} from "../props-examples"; // barrel file index.js
+} from "../examples/props-example"; // barrel file index.js
 
 export default function PropsExamplesPage() {
   const [count, setCount] = useState(0);

@@ -1,5 +1,5 @@
-import { demoSpreadRest } from "../../es6-practice";
-import PrettyJson from "../PrettyJson.jsx";
+import { demoSpreadRest } from "./es6-practice.js";
+import PrettyJson from "./PrettyJson.jsx";
 
 /**
  * @component DemoSpreadRest

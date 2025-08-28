@@ -1,5 +1,5 @@
-import { demoDefaultParams } from "../../es6-practice";
-import PrettyJson from "../PrettyJson.jsx";
+import { demoDefaultParams } from "./es6-practice.js";
+import PrettyJson from "./PrettyJson.jsx";
 
 /**
  * @component DemoDefaultParams

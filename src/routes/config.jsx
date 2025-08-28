@@ -7,6 +7,7 @@ import Home from "../pages/Home.jsx";
 import Es6ExamplesPage from "../pages/Es6Examples.jsx";
 import PropsExamplesPage from "../pages/PropsExamples.jsx";
 import StateExamplesPage from "../pages/StateExamples.jsx";
+import HooksExamplesPage from "../pages/HooksExamples.jsx";
 import NotFound from "../pages/NotFound.jsx";
 
 /**
@@ -24,6 +25,7 @@ export const routes = [
   { path: "/es6-examples", element: <Es6ExamplesPage />, label: "ES6 Examples", inNav: true },
   { path: "/props-example", element: <PropsExamplesPage />, label: "Props Example", inNav: true },
   { path: "/state-examples", element: <StateExamplesPage />, label: "State Examples", inNav: true },
+  { path: "/hooks-examples", element: <HooksExamplesPage />, label: "Hooks Examples", inNav: true },
 
   // 👉 Add as many pages as you like; set inNav: true to show in Header
   // { path: "/effects-examples", element: <EffectsExamplesPage />, label: "Effects", inNav: true },

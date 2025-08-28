@@ -11,6 +11,29 @@ This React application serves as a **learning sandbox** that demonstrates:
 - **Routing and navigation** with React Router
 - **Build tooling** with Vite for fast development
 
+## 📚 Complete Documentation Index
+
+### **Core Documentation**
+- **[📖 Project Overview](./PROJECT_OVERVIEW.md)** - What this project demonstrates and its structure
+- **[🏗️ Architecture Guide](./ARCHITECTURE.md)** - How the application works step by step
+- **[🎯 Features Guide](./FEATURES.md)** - Key features and capabilities
+- **[🔧 Configuration Guide](./CONFIGURATION.md)** - Build tools and settings
+- **[🚀 Development Guide](./DEVELOPMENT.md)** - Development workflow and scripts
+
+### **Learning Resources**
+- **[📚 Learning Roadmap](./LEARNING.md)** - Step-by-step learning path
+- **[📋 Installation Guide](./INSTALLATION.md)** - Setup and configuration
+- **[📚 Examples Directory](./examples/)** - Step-by-step learning examples
+  - **[README.md](./examples/README.md)** - Examples overview and learning guide
+  - **[step-0-es6.md](./examples/step-0-es6.md)** - ES6+ JavaScript essentials
+  - **[step-1-props.md](./examples/step-1-props.md)** - React props fundamentals
+  - **[step-2-state.md](./examples/step-2-state.md)** - React state management
+
+### **Contributing**
+- **[🤝 Contributing Guide](./CONTRIBUTING.md)** - How to contribute to the project
+
+---
+
 ## 🗺️ Learning Roadmap
 
 ### **Step 0: ES6+ JavaScript Essentials** 
@@ -116,23 +139,30 @@ npm run dev
 
 ```
 reacjs-demo/
-├── docs/              # 📚 This documentation directory
-│   ├── README.md      # Learning roadmap overview
-│   ├── INDEX.md       # This comprehensive index
-│   ├── INSTALLATION.md # Detailed installation guide
-│   ├── step-0-es6.md  # ES6+ JavaScript essentials
-│   ├── step-1-props.md # React props fundamentals
-│   └── step-2-state.md # React state management
-├── src/               # Source code directory
-│   ├── components/    # Reusable UI components
-│   ├── pages/         # Route-specific page components
-│   ├── routes/        # Routing configuration
-│   ├── assets/        # Static assets (images, icons)
-│   └── ...            # Other source files
-├── public/            # Static assets served directly
-├── package.json       # Project dependencies and scripts
-├── vite.config.js     # Vite build configuration
-└── README.md          # Main project overview
+├── docs/                  # 📚 This documentation directory
+│   ├── README.md          # Learning roadmap overview
+│   ├── INDEX.md           # This comprehensive index
+│   ├── INSTALLATION.md    # Detailed installation guide
+│   ├── PROJECT_OVERVIEW.md # Project overview and structure
+│   ├── ARCHITECTURE.md    # How the application works
+│   ├── FEATURES.md        # Key features and capabilities
+│   ├── CONFIGURATION.md   # Configuration files and settings
+│   ├── DEVELOPMENT.md     # Development workflow and scripts
+│   ├── LEARNING.md        # Learning roadmap and resources
+│   ├── CONTRIBUTING.md    # How to contribute to the project
+│   ├── step-0-es6.md      # ES6+ JavaScript essentials
+│   ├── step-1-props.md    # React props fundamentals
+│   └── step-2-state.md    # React state management
+├── src/                   # Source code directory
+│   ├── components/        # Reusable UI components
+│   ├── pages/            # Route-specific page components
+│   ├── routes/           # Routing configuration
+│   ├── assets/           # Static assets (images, icons)
+│   └── ...               # Other source files
+├── public/               # Static assets served directly
+├── package.json          # Project dependencies and scripts
+├── vite.config.js        # Vite build configuration
+└── README.md             # Main project overview
 ```
 
 ## 🎓 Learning Approach

@@ -13,9 +13,9 @@ This repository is a hands-on sandbox to learn React from **Beginner → Interme
 
 ## Steps
 
-1. **[Step 0 — ES6+ Essentials](./step-0-es6.md)**
-2. **[Step 1 — Props](./step-1-props.md)**
-3. **[Step 2 — State](./step-2-state.md)**
+1. **[Step 0 — ES6+ Essentials](./examples/step-0-es6.md)**
+2. **[Step 1 — Props](./examples/step-1-props.md)**
+3. **[Step 2 — State](./examples/step-2-state.md)**
 
 ## Quick Start
 

@@ -68,6 +68,79 @@ export const routes = [
 ];
 ```
 
+## 🔧 How Routing Actually Works
+
+### **1. Centralized Configuration Approach**
+The routing system uses a **single source of truth** approach where all routes are defined in `src/routes/config.jsx`. Each route object contains:
+
+```jsx
+{
+  path: "/es6-examples",           // URL path to match
+  element: <Es6ExamplesPage />,    // React component to render
+  label: "ES6 Examples",           // Display name in navigation
+  inNav: true                      // Whether to show in header
+}
+```
+
+**Special Route Types:**
+- **Index Route**: `{ index: true, path: "/", element: <Home /> }` - Renders at root URL `/`
+- **Catch-all Route**: `{ path: "*", element: <NotFound /> }` - Handles 404 errors
+
+### **2. Dynamic Route Generation in App.jsx**
+The `App.jsx` component dynamically generates React Router `<Route>` components from the configuration:
+
+```jsx
+<Routes>
+  {routes.map((r) =>
+    r.index ? (
+      <Route key="__index__" index element={r.element} />
+    ) : (
+      <Route key={r.path} path={r.path} element={r.element} />
+    )
+  )}
+  <Route path={notFoundRoute.path} element={notFoundRoute.element} />
+</Routes>
+```
+
+**What Happens:**
+- Maps through all routes from `config.jsx`
+- Creates `<Route>` components dynamically
+- Handles index routes differently (uses `index` prop instead of `path`)
+- Adds the 404 catch-all route at the end
+
+### **3. Automatic Header Navigation Generation**
+The `Header.jsx` component automatically generates navigation links from the same route configuration:
+
+```jsx
+const navItems = routes
+  .filter((r) => r.inNav)  // Only show routes marked for navigation
+  .map((r) => ({ 
+    to: r.index ? "/" : r.path,  // Use "/" for index routes
+    label: r.label || r.path 
+  }));
+```
+
+**Smart Features:**
+- **Overflow Handling**: If more than 7 nav items, extras go under "More" dropdown
+- **Active State**: Uses `NavLink` for automatic active link highlighting
+- **Accessibility**: Proper ARIA labels and keyboard navigation support
+
+### **4. Complete Routing Flow**
+```
+1. User clicks nav link → React Router updates URL
+2. URL changes → React Router matches against route definitions
+3. Route matches → Corresponding component renders in <main> area
+4. Navigation updates → Header highlights active route
+```
+
+### **5. Benefits of This Architecture**
+- **Single Source of Truth**: All routes defined in one place
+- **Automatic Sync**: Header and routes always match perfectly
+- **Easy Maintenance**: Add/remove routes by editing one file
+- **Type Safety**: JSDoc types for route objects
+- **Scalable**: Handles overflow navigation automatically
+- **No Duplication**: Route definitions used for both routing and navigation
+
 ## 🗺️ Navigation Flow
 
 ### **1. Home Page (`/`)**

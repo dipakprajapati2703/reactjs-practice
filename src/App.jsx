@@ -4,6 +4,7 @@
  */
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 import { routes, notFoundRoute } from "./routes/config.jsx";
 import "./App.css";
 
@@ -23,6 +24,7 @@ export default function App() {
           <Route path={notFoundRoute.path} element={notFoundRoute.element} />
         </Routes>
       </main>
+      <ScrollToTop />
     </div>
   );
 }

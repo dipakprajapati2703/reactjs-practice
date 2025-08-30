@@ -12,11 +12,10 @@ import {
   Price,
   Toolbar,
 } from "../examples/props-example"; // barrel file index.js
-import "../examples/shared-styles.css";
 
 export default function PropsExamplesPage() {
-  const [count, setCount] = useState(0);
   const [activeExample, setActiveExample] = useState('greeting');
+  const [count, setCount] = useState(0);
   const user = { first: "Dipak", last: "Prajapati", skills: ["PHP", "React", "Docker"] };
 
   const examples = [
@@ -40,7 +39,7 @@ export default function PropsExamplesPage() {
       description: 'Function props for event handling',
       component: ActionButton,
       props: { label: "Run Action", onRun: () => setCount((c) => c + 1) },
-      extraContent: <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#666' }}>Count: <strong>{count}</strong></p>
+      extraContent: <p className="extra-content">Count: <strong>{count}</strong></p>
     },
     {
       id: 'card',
@@ -85,8 +84,8 @@ export default function PropsExamplesPage() {
       description: 'JSX props for complex content',
       component: Toolbar,
       props: {
-        left: <span style={{ fontWeight: 'bold', color: '#3498db' }}>🚀 React App</span>,
-        right: <button style={{ padding: '8px 16px', borderRadius: '4px', border: 'none', background: '#27ae60', color: 'white', cursor: 'pointer' }}>Login</button>
+        left: <span className="app-title">🚀 React App</span>,
+        right: <button className="login-button">Login</button>
       }
     }
   ];
@@ -102,7 +101,7 @@ export default function PropsExamplesPage() {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>🎯 React Props Examples</h1>
+        <h1 className="page-title">🎯 React Props Examples</h1>
         <p className="page-description">
           Master React props patterns from basic to advanced. Learn how to pass data between components, 
           handle events, and build reusable component interfaces.
@@ -111,9 +110,9 @@ export default function PropsExamplesPage() {
 
       <div className="page-content">
         {/* Props Overview */}
-        <div className="props-overview" style={{ background: 'white', borderRadius: '16px', padding: '25px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)', border: '1px solid #e1e8ed' }}>
-          <h2 style={{ color: '#2c3e50', marginBottom: '15px', fontSize: '1.8rem', fontWeight: 600 }}>📚 Props Fundamentals</h2>
-          <p style={{ color: '#6c757d', lineHeight: 1.6, margin: 0, fontSize: '1.1rem' }}>
+        <div className="props-overview">
+          <h2>📚 Props Fundamentals</h2>
+          <p>
             Props (properties) are React's way of passing data from parent to child components. 
             They are read-only and help create reusable, configurable components.
           </p>
@@ -144,13 +143,11 @@ export default function PropsExamplesPage() {
         {/* Active Example Display */}
         <div className="example-display">
           {ActiveExample ? (
-            <div className="example-card" style={{ background: '#f8f9fa', border: '1px solid #e9ecef', borderRadius: '12px', padding: '25px', transition: 'all 0.3s ease' }}>
-              <h3 style={{ color: '#2c3e50', margin: '0 0 15px 0', fontSize: '1.4rem', fontWeight: 600, borderBottom: '2px solid #3498db', paddingBottom: '8px' }}>
-                {ActiveExample.name}
-              </h3>
+            <div className="example-card">
+              <h3>{ActiveExample.name}</h3>
               <p>{ActiveExample.description}:</p>
               
-              <div className="component-demo" style={{ background: 'white', border: '1px solid #e9ecef', borderRadius: '8px', padding: '20px', margin: '20px 0', textAlign: 'center', minHeight: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '10px' }}>
+              <div className="component-demo">
                 {ActiveExample.component ? (
                   <>
                     {ActiveExample.multipleProps ? (
@@ -167,7 +164,7 @@ export default function PropsExamplesPage() {
                     {ActiveExample.extraContent}
                   </>
                 ) : (
-                  <div style={{ color: 'red' }}>
+                  <div className="error-message">
                     ❌ {ActiveExample.name} component failed to load
                   </div>
                 )}
@@ -229,7 +226,7 @@ export default function PropsExamplesPage() {
               </div>
             </div>
           ) : (
-            <div style={{ padding: '20px', textAlign: 'center' }}>
+            <div className="center-content">
               <p>Select an example from the navigation cards above to get started!</p>
             </div>
           )}

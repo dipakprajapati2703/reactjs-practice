@@ -95,7 +95,7 @@ const generateReport = (data, format) => {
   return { report, duration };
 };
 
-const useMemoExample = () => {
+const UseMemoExample = () => {
   const [items, setItems] = useState([
     { id: 1, name: 'Laptop', description: 'High-performance laptop', price: 1200, rating: 4.5 },
     { id: 2, name: 'Mouse', description: 'Wireless gaming mouse', price: 80, rating: 4.2 },
@@ -428,4 +428,4 @@ const useMemoExample = () => {
   );
 };
 
-export default useMemoExample;
+export default UseMemoExample;

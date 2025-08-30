@@ -16,9 +16,19 @@ const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      if (!item) return initialValue;
+      
+      // Try to parse the item, but handle invalid JSON gracefully
+      const parsed = JSON.parse(item);
+      return parsed;
     } catch (error) {
-      console.error(`Error reading localStorage key "${key}":`, error);
+      console.warn(`Invalid JSON in localStorage key "${key}", clearing and using initial value:`, error);
+      // Clear the invalid data from localStorage
+      try {
+        window.localStorage.removeItem(key);
+      } catch (clearError) {
+        console.warn(`Could not clear invalid localStorage key "${key}":`, clearError);
+      }
       return initialValue;
     }
   });
@@ -29,9 +39,17 @@ const useLocalStorage = (key, initialValue) => {
       // Allow value to be a function so we have the same API as useState
       const valueToStore = value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      
+      // Only store if the value is not undefined or null
+      if (valueToStore !== undefined && valueToStore !== null) {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      } else {
+        window.localStorage.removeItem(key);
+      }
     } catch (error) {
       console.error(`Error setting localStorage key "${key}":`, error);
+      // If we can't store the value, at least update the state
+      setStoredValue(value instanceof Function ? value(storedValue) : value);
     }
   }, [key, storedValue]);
 
@@ -268,6 +286,28 @@ const CustomHooksExample = () => {
     email: '',
     message: ''
   });
+
+  // Clear any invalid localStorage data on component mount
+  useEffect(() => {
+    try {
+      // Check for common localStorage keys that might have invalid data
+      const keysToCheck = ['userName', 'userPreferences', 'formData', 'searchHistory'];
+      keysToCheck.forEach(key => {
+        try {
+          const item = localStorage.getItem(key);
+          if (item) {
+            // Try to parse to see if it's valid JSON
+            JSON.parse(item);
+          }
+        } catch (error) {
+          console.warn(`Clearing invalid localStorage key "${key}":`, error);
+          localStorage.removeItem(key);
+        }
+      });
+    } catch (error) {
+      console.warn('Error during localStorage cleanup:', error);
+    }
+  }, []);
 
   // Validation schema for the form
   const validationSchema = {

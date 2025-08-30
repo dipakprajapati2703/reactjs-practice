@@ -6,7 +6,6 @@ import {
   ListExample,
   ObjectExample
 } from '../examples/state-example';
-import '../examples/shared-styles.css';
 
 /**
  * @page StateExamples
@@ -59,7 +58,7 @@ export default function StateExamplesPage() {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>🔄 React State Examples</h1>
+        <h1 className="page-title">🔄 React State Examples</h1>
         <p className="page-description">
           Master React state management from basic to advanced. Learn useState patterns, form handling, 
           list management, and object state updates with practical examples.
@@ -103,7 +102,7 @@ export default function StateExamplesPage() {
           {ActiveComponent ? (
             <ActiveComponent />
           ) : (
-            <div style={{ padding: '20px', textAlign: 'center' }}>
+            <div className="center-content">
               <p>Select an example from the navigation cards above to get started!</p>
             </div>
           )}

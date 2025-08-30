@@ -154,60 +154,7 @@ export default function ObjectExample() {
       <h3>🏗️ Complex Object State Management</h3>
       <p>Managing nested objects with immutable updates and complex state structures.</p>
 
-      <div className="user-display">
-        <h4>👤 User Profile</h4>
-        <div className="profile-section">
-          <div className="profile-field">
-            <strong>Name:</strong> {user.name}
-          </div>
-          <div className="profile-field">
-            <strong>Age:</strong> {user.age}
-          </div>
-          <div className="profile-field">
-            <strong>Email:</strong> {user.email}
-          </div>
-        </div>
-
-        <h4>📝 Profile Details</h4>
-        <div className="profile-section">
-          <div className="profile-field">
-            <strong>Bio:</strong> {user.profile.bio}
-          </div>
-          <div className="profile-field">
-            <strong>Location:</strong> {user.profile.location}
-          </div>
-          <div className="profile-field">
-            <strong>Website:</strong> <a href={user.profile.website} target="_blank" rel="noopener noreferrer">{user.profile.website}</a>
-          </div>
-        </div>
-
-        <h4>⚙️ Preferences</h4>
-        <div className="profile-section">
-          <div className="profile-field">
-            <strong>Theme:</strong> {user.profile.preferences.theme}
-          </div>
-          <div className="profile-field">
-            <strong>Language:</strong> {user.profile.preferences.language}
-          </div>
-          <div className="profile-field">
-            <strong>Notifications:</strong> {user.profile.preferences.notifications ? 'On' : 'Off'}
-          </div>
-        </div>
-
-        <h4>🔒 Settings</h4>
-        <div className="profile-section">
-          <div className="profile-field">
-            <strong>Privacy:</strong> {user.settings.privacy}
-          </div>
-          <div className="profile-field">
-            <strong>Timezone:</strong> {user.settings.timezone}
-          </div>
-          <div className="profile-field">
-            <strong>Currency:</strong> {user.settings.currency}
-          </div>
-        </div>
-      </div>
-
+      {/* Quick Updates Section - First */}
       <div className="controls-section">
         <h4>🎛️ Quick Updates</h4>
         <div className="control-group">
@@ -301,6 +248,61 @@ export default function ObjectExample() {
             <option value="private">Private</option>
             <option value="friends">Friends Only</option>
           </select>
+        </div>
+      </div>
+
+      {/* User Profile Section - Second */}
+      <div className="user-display">
+        <h4>👤 User Profile</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Name:</strong> {user.name}
+          </div>
+          <div className="profile-field">
+            <strong>Age:</strong> {user.age}
+          </div>
+          <div className="profile-field">
+            <strong>Email:</strong> {user.email}
+          </div>
+        </div>
+
+        <h4>📝 Profile Details</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Bio:</strong> {user.profile.bio}
+          </div>
+          <div className="profile-field">
+            <strong>Location:</strong> {user.profile.location}
+          </div>
+          <div className="profile-field">
+            <strong>Website:</strong> <a href={user.profile.website} target="_blank" rel="noopener noreferrer">{user.profile.website}</a>
+          </div>
+        </div>
+
+        <h4>⚙️ Preferences</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Theme:</strong> {user.profile.preferences.theme}
+          </div>
+          <div className="profile-field">
+            <strong>Language:</strong> {user.profile.preferences.language}
+          </div>
+          <div className="profile-field">
+            <strong>Notifications:</strong> {user.profile.preferences.notifications ? 'On' : 'Off'}
+          </div>
+        </div>
+
+        <h4>🔒 Settings</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Privacy:</strong> {user.settings.privacy}
+          </div>
+          <div className="profile-field">
+            <strong>Timezone:</strong> {user.settings.timezone}
+          </div>
+          <div className="profile-field">
+            <strong>Currency:</strong> {user.settings.currency}
+          </div>
         </div>
       </div>
 

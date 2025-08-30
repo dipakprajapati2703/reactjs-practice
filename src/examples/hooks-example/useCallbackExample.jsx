@@ -135,7 +135,7 @@ const MemoizedForm = memo(({ onSubmit, onReset, renderCount }) => {
   );
 });
 
-const useCallbackExample = () => {
+const UseCallbackExample = () => {
   const [count, setCount] = useState(0);
   const [items, setItems] = useState([
     { id: 1, name: 'Laptop', price: 1200 },
@@ -484,4 +484,4 @@ const useCallbackExample = () => {
   );
 };
 
-export default useCallbackExample;
+export default UseCallbackExample;

@@ -257,7 +257,7 @@ const OldWayConsumer = () => {
  * Main Context Example Component
  * Demonstrates the complete context pattern
  */
-const useContextExample = () => {
+const UseContextExample = () => {
   return (
     <div className="hooks-example">
       <h2>🌐 useContext Hook Examples</h2>
@@ -430,7 +430,7 @@ const MyComponent = () => {
 const useContextExampleWithProviders = () => (
   <ThemeProvider>
     <UserProvider>
-      <useContextExample />
+      <UseContextExample />
     </UserProvider>
   </ThemeProvider>
 );

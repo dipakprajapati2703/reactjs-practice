@@ -9,7 +9,7 @@ import React, { useState, useRef, useEffect } from 'react';
  * 3. Storing previous values and mutable data
  * 4. Imperative DOM method calls
  */
-const useRefExample = () => {
+const UseRefExample = () => {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('');
   const [renderCount, setRenderCount] = useState(0);
@@ -38,17 +38,17 @@ const useRefExample = () => {
   // Effect to track previous values
   useEffect(() => {
     previousCountRef.current = count;
-  });
+  }, [count]);
 
   useEffect(() => {
     previousNameRef.current = name;
-  });
+  }, [name]);
 
   // Effect to increment render count without causing re-renders
   useEffect(() => {
     renderCountRef.current += 1;
     setRenderCount(renderCountRef.current);
-  });
+  }, []); // Only run once on mount
 
   // Effect to demonstrate timer with ref
   useEffect(() => {
@@ -299,4 +299,4 @@ const useRefExample = () => {
   );
 };
 
-export default useRefExample;
+export default UseRefExample;

@@ -5,12 +5,13 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
 import { routes, notFoundRoute } from "./routes/config.jsx";
+import "./App.css";
 
 export default function App() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif" }}>
+    <div className="app-container">
       <Header />
-      <main style={{ padding: 16 }}>
+      <main className="app-main">
         <Routes>
           {routes.map((r) =>
             r.index ? (

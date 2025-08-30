@@ -1,59 +1,54 @@
-import React, { useState } from 'react';
-import {
-  useEffectExample,
-  useRefExample,
-  useContextExample,
-  useMemoExample,
-  useCallbackExample,
-  CustomHooksExample
-} from '../examples/hooks-example';
-import '../examples/hooks-example/HooksExample.css';
-
-
 /**
- * Hooks Examples Page
- * 
- * This page demonstrates all the React Hooks examples from beginner to intermediate level.
- * Users can navigate between different hooks to learn their concepts and usage patterns.
+ * @component HooksExamples
+ * @description Interactive React Hooks examples with navigation cards and rich content.
  */
-const HooksExamples = () => {
-  const [activeExample, setActiveExample] = useState('useEffect');
+import { useState } from "react";
+import useEffectExample from "../examples/hooks-example/useEffectExample";
+import useRefExample from "../examples/hooks-example/useRefExample";
+import useCallbackExample from "../examples/hooks-example/useCallbackExample";
+import useContextExample from "../examples/hooks-example/useContextExample";
+import useMemoExample from "../examples/hooks-example/useMemoExample";
+import CustomHooksExample from "../examples/hooks-example/CustomHooksExample";
+import "../examples/hooks-example/HooksExample.css";
+
+export default function HooksExamples() {
+  const [activeExample, setActiveExample] = useState("useEffect");
 
   const examples = [
     {
-      id: 'useEffect',
-      name: '🔄 useEffect Hook',
-      description: 'Side effects, cleanup, and dependency management',
+      id: "useEffect",
+      name: "🔄 useEffect Hook",
+      description: "Side effects, cleanup, and dependency management",
       component: useEffectExample
     },
     {
-      id: 'useRef',
-      name: '🎯 useRef Hook',
-      description: 'DOM manipulation and instance variables',
+      id: "useRef",
+      name: "🎯 useRef Hook",
+      description: "DOM manipulation and instance variables",
       component: useRefExample
     },
     {
-      id: 'useContext',
-      name: '🌐 useContext Hook',
-      description: 'Context API and avoiding prop drilling',
+      id: "useContext",
+      name: "🌐 useContext Hook",
+      description: "Context API and avoiding prop drilling",
       component: useContextExample
     },
     {
-      id: 'useMemo',
-      name: '⚡ useMemo Hook',
-      description: 'Performance optimization and memoization',
+      id: "useMemo",
+      name: "⚡ useMemo Hook",
+      description: "Performance optimization and memoization",
       component: useMemoExample
     },
     {
-      id: 'useCallback',
-      name: '🔄 useCallback Hook',
-      description: 'Stable function references and React.memo',
+      id: "useCallback",
+      name: "🔄 useCallback Hook",
+      description: "Stable function references and React.memo",
       component: useCallbackExample
     },
     {
-      id: 'customHooks',
-      name: '🪝 Custom Hooks',
-      description: 'Building reusable logic with custom hooks',
+      id: "customHooks",
+      name: "🪝 Custom Hooks",
+      description: "Building reusable logic with custom hooks",
       component: CustomHooksExample
     }
   ];
@@ -78,39 +73,24 @@ const HooksExamples = () => {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>🪝 React Hooks Examples</h1>
+        <h1 className="page-title">🪝 React Hooks Examples</h1>
         <p className="page-description">
           Master React Hooks from beginner to intermediate level. Learn useEffect, useRef, useContext, 
           useMemo, useCallback, and how to build custom hooks.
         </p>
-        <div style={{ marginTop: '20px', padding: '10px', background: 'rgba(255,255,255,0.2)', borderRadius: '8px' }}>
-          <p style={{ margin: '0 0 10px 0' }}><strong>Debug Info:</strong></p>
-          <p style={{ margin: '5px 0' }}>Active Example: <code>{activeExample}</code></p>
-          <p style={{ margin: '5px 0' }}>Available Examples: <code>{examples.map(ex => ex.id).join(', ')}</code></p>
+        <div className="debug-info">
+          <p><strong>Debug Info:</strong></p>
+          <p>Active Example: <code>{activeExample}</code></p>
+          <p>Available Examples: <code>{examples.map(ex => ex.id).join(', ')}</code></p>
           <button 
             onClick={() => handleExampleChange('useRef')}
-            style={{ 
-              background: '#fff', 
-              color: '#333', 
-              border: 'none', 
-              padding: '8px 16px', 
-              borderRadius: '4px', 
-              cursor: 'pointer',
-              marginRight: '10px'
-            }}
+            className="modern-button secondary small"
           >
             Test: Switch to useRef
           </button>
           <button 
             onClick={() => handleExampleChange('useEffect')}
-            style={{ 
-              background: '#fff', 
-              color: '#333', 
-              border: 'none', 
-              padding: '8px 16px', 
-              borderRadius: '4px', 
-              cursor: 'pointer'
-            }}
+            className="modern-button secondary small"
           >
             Test: Switch to useEffect
           </button>
@@ -119,32 +99,19 @@ const HooksExamples = () => {
 
       <div className="page-content">
         {/* Navigation Tabs */}
-        <div className="examples-navigation" style={{ background: 'white', borderRadius: '16px', padding: '25px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)', border: '1px solid #e1e8ed' }}>
-          <div className="nav-tabs" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
+        <div className="hooks-navigation">
+          <div className="hooks-nav-tabs">
             {examples.map((example) => (
               <button
                 key={example.id}
                 onClick={() => handleExampleChange(example.id)}
-                className={`nav-tab ${activeExample === example.id ? 'active' : ''}`}
-                style={{
-                  background: activeExample === example.id ? 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)' : 'white',
-                  border: '2px solid #e1e8ed',
-                  borderRadius: '12px',
-                  padding: '20px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  textAlign: 'left',
-                  minHeight: '100px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: activeExample === example.id ? 'white' : 'inherit'
-                }}
+                className={`hooks-nav-tab ${activeExample === example.id ? 'active' : ''}`}
               >
-                <div className="tab-content" style={{ display: 'flex', alignItems: 'center', gap: '15px', width: '100%' }}>
-                  <div className="tab-icon" style={{ fontSize: '2rem', minWidth: '50px', textAlign: 'center' }}>{example.name.split(' ')[0]}</div>
-                  <div className="tab-details" style={{ flex: 1 }}>
-                    <div className="tab-name" style={{ fontWeight: 600, fontSize: '1.1rem', marginBottom: '5px' }}>{example.name.split(' ').slice(1).join(' ')}</div>
-                    <div className="tab-description" style={{ fontSize: '0.9rem', opacity: 0.8, lineHeight: 1.4 }}>{example.description}</div>
+                <div className="hooks-tab-content">
+                  <div className="hooks-tab-icon">{example.name.split(' ')[0]}</div>
+                  <div className="hooks-tab-details">
+                    <div className="hooks-tab-name">{example.name.split(' ').slice(1).join(' ')}</div>
+                    <div className="hooks-tab-description">{example.description}</div>
                   </div>
                 </div>
               </button>
@@ -157,7 +124,7 @@ const HooksExamples = () => {
           {ActiveComponent ? (
             <ActiveComponent />
           ) : (
-            <div style={{ padding: '20px', textAlign: 'center' }}>
+            <div className="center-content">
               <p>Loading component...</p>
               <p>Active example: {activeExample}</p>
               <p>Available components: {examples.map(ex => ex.id).join(', ')}</p>
@@ -314,6 +281,4 @@ const HooksExamples = () => {
       </div>
     </div>
   );
-};
-
-export default HooksExamples;
+}

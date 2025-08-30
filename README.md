@@ -1,6 +1,6 @@
 # React.js Demo Project
 
-A modern React application built with Vite, featuring React Router for navigation, ES6 examples, and props demonstrations. This project serves as a learning platform for React concepts and modern JavaScript features.
+A modern React application built with Vite, featuring React Router for navigation, ES6 examples, and comprehensive React demonstrations. This project serves as a learning platform for React concepts and modern JavaScript features.
 
 ## 🚀 Quick Start
 
@@ -43,16 +43,26 @@ This project includes comprehensive documentation organized into focused guides:
 - **`npm run dev`** - Start development server with hot reload
 - **`npm run build`** - Build production bundle
 - **`npm run preview`** - Preview production build locally
-- **`npm run lint`** - Run ESLint for code quality checks
+- **`npm run lint`** - Run ESLint for code quality checks (React-specific rules enabled)
 
 ## 🎯 What You'll Learn
 
 This project demonstrates:
 - **React Hooks** (useState, useEffect, useRef, useContext, useMemo, useCallback)
-- **React Router** for client-side navigation
-- **Component composition** and props
-- **Modern JavaScript** (ES6+) features
-- **Build tooling** with Vite
+- **React Router v7** for client-side navigation
+- **Component composition** and props patterns
+- **Modern JavaScript** (ES6+) features and syntax
+- **Build tooling** with Vite 5.x
+- **Modern CSS** with shared styles and responsive design
+- **Project structure** best practices for React applications
+
+## 🎨 Styling & UI
+
+The project includes:
+- **Shared CSS utilities** for consistent styling
+- **Modern form styles** with responsive design
+- **Component-specific styling** with CSS modules approach
+- **Responsive design** patterns and best practices
 
 ## 🚀 Next Steps
 

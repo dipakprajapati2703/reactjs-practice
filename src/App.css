@@ -10,10 +10,13 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  margin: 0 10px;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,4 +42,16 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Ensure logos are properly spaced in the new layout */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container a {
+  display: inline-block;
 }

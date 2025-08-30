@@ -7,6 +7,5 @@ import PrettyJson from "./PrettyJson.jsx";
  */
 export default function DemoArrowFunctions() {
   const data = demoArrowFunctions();
-  data.sampleSum = data.add(2, 3);
   return <PrettyJson title="Arrow Functions" data={data} />;
 }

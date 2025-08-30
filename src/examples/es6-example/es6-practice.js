@@ -25,12 +25,13 @@ export function demoLetConst() {
 
 /**
  * Arrow functions: concise syntax + lexical `this`.
- * @returns {{doubles:number[], add:(a:number,b:number)=>number}}
+ * @returns {{doubles:number[], sampleSum:number}}
  */
 export function demoArrowFunctions() {
   const add = (a, b) => a + b;
   const doubles = [1, 2, 3].map((n) => n * 2);
-  return { doubles, add };
+  const sampleSum = add(2, 3); // 5
+  return { doubles, sampleSum };
 }
 
 /**
@@ -40,8 +41,7 @@ export function demoArrowFunctions() {
 export function demoTemplateLiterals() {
   const name = "React Learner";
   const greeting = `Hello, ${name}!`;
-  const multiLine = `Line 1
-Line 2`;
+  const multiLine = `Line 1\nLine 2`;
   return { greeting, multiLine };
 }
 

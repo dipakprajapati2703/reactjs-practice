@@ -111,9 +111,9 @@ export default function StateExamplesPage() {
         {/* State Best Practices */}
         <div className="best-practices">
           <h2>✅ State Management Best Practices</h2>
-          <div className="practices-grid">
-            <div className="practice-card">
-              <h3>🔒 Immutability</h3>
+          <div className="practices-list">
+            <div className="practice-item">
+              <h4>🔒 Immutability</h4>
               <ul>
                 <li>Never mutate state directly</li>
                 <li>Always use setter functions</li>
@@ -121,8 +121,8 @@ export default function StateExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>🎯 State Structure</h3>
+            <div className="practice-item">
+              <h4>🎯 State Structure</h4>
               <ul>
                 <li>Keep state minimal and focused</li>
                 <li>Group related data together</li>
@@ -130,8 +130,8 @@ export default function StateExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>⚡ Performance</h3>
+            <div className="practice-item">
+              <h4>⚡ Performance</h4>
               <ul>
                 <li>Use functional updates for dependent state</li>
                 <li>Split large state objects when possible</li>
@@ -139,8 +139,8 @@ export default function StateExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>🧹 Cleanup</h3>
+            <div className="practice-item">
+              <h4>🧹 Cleanup</h4>
               <ul>
                 <li>Clean up timers and subscriptions</li>
                 <li>Use useEffect cleanup functions</li>

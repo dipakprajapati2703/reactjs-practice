@@ -235,9 +235,9 @@ export default function PropsExamplesPage() {
         {/* Best Practices */}
         <div className="best-practices">
           <h2>✅ Props Best Practices</h2>
-          <div className="practices-grid">
-            <div className="practice-card">
-              <h3>📝 Naming Conventions</h3>
+          <div className="practices-list">
+            <div className="practice-item">
+              <h4>📝 Naming Conventions</h4>
               <ul>
                 <li>Use camelCase for prop names</li>
                 <li>Be descriptive and clear</li>
@@ -245,8 +245,8 @@ export default function PropsExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>🔒 Immutability</h3>
+            <div className="practice-item">
+              <h4>🔒 Immutability</h4>
               <ul>
                 <li>Props are read-only</li>
                 <li>Never modify props directly</li>
@@ -254,8 +254,8 @@ export default function PropsExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>🎯 Default Values</h3>
+            <div className="practice-item">
+              <h4>🎯 Default Values</h4>
               <ul>
                 <li>Provide sensible defaults</li>
                 <li>Use destructuring with defaults</li>
@@ -263,8 +263,8 @@ export default function PropsExamplesPage() {
               </ul>
             </div>
             
-            <div className="practice-card">
-              <h3>🧪 Validation</h3>
+            <div className="practice-item">
+              <h4>🧪 Validation</h4>
               <ul>
                 <li>Use PropTypes for validation</li>
                 <li>TypeScript for type safety</li>

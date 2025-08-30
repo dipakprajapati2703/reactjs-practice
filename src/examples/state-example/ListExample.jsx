@@ -87,7 +87,7 @@ export default function ListExample() {
 
       {/* Add Item Section */}
       <div className="add-item-section">
-        <h4>➕ Add New Item</h4>
+        <h4>Add New Item</h4>
         <div className="add-item-controls">
           <div>
             <label>New Task</label>

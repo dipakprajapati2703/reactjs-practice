@@ -22,6 +22,8 @@ This project includes comprehensive documentation organized into focused guides:
 
 ### **Core Documentation**
 - **[📖 Project Overview](./docs/PROJECT_OVERVIEW.md)** - What this project demonstrates and its structure
+- **[🔄 Application Flow](./docs/FLOW.md)** - How the application works from entry point to components
+- **[🧭 Routing Diagram](./docs/ROUTING_DIAGRAM.md)** - Visual representation of navigation and component flow
 - **[🏗️ Architecture Guide](./docs/ARCHITECTURE.md)** - How the application works step by step
 - **[🎯 Features Guide](./docs/FEATURES.md)** - Key features and capabilities
 - **[🔧 Configuration Guide](./docs/CONFIGURATION.md)** - Build tools and settings

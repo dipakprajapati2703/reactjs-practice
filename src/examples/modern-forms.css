@@ -483,28 +483,150 @@
 
 .add-item-section {
   background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border: 1px solid #e1e8ed;
   margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-item-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
+}
+
+.add-item-section h4 {
+  margin: 0 0 30px 0;
+  color: #2c3e50;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  letter-spacing: -0.5px;
 }
 
 .add-item-controls {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: flex-end;
   flex-wrap: wrap;
 }
 
-.add-item-controls > div {
+.add-item-controls > div:first-child {
   flex: 1;
-  min-width: 250px;
+  min-width: 300px;
 }
 
-.add-item-controls .modern-button {
-  white-space: nowrap;
+.add-item-controls > div:last-child {
   flex-shrink: 0;
+  min-width: 160px;
+}
+
+.add-item-controls label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.add-item-controls input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.add-item-controls input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.add-item-controls input::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.add-item-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+}
+
+.add-item-button::before {
+  content: "➕";
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+.add-item-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%);
+}
+
+.add-item-button:active {
+  transform: translateY(0);
+}
+
+.add-item-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2), 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Responsive improvements for add item section */
+@media (max-width: 768px) {
+  .add-item-section {
+    padding: 25px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .add-item-section h4 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .add-item-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-item-controls > div:first-child,
+  .add-item-controls > div:last-child {
+    min-width: auto;
+  }
+  
+  .add-item-button {
+    min-height: 52px;
+    padding: 14px 20px;
+  }
 }
 
 .items-list {

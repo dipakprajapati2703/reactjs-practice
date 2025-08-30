@@ -1,36 +1,47 @@
-import React, { useState } from 'react';
-
 /**
  * @component ObjectExample
- * @description Demonstrates object state updates with immutable patterns.
+ * @description Demonstrates complex object state management with nested updates.
  */
+import { useState } from "react";
+import "../../examples/modern-forms.css";
+
 export default function ObjectExample() {
   const [user, setUser] = useState({
-    name: 'John Doe',
-    email: 'john@example.com',
+    name: "Dipak Prajapati",
+    age: 25,
+    email: "dipak@example.com",
     profile: {
-      age: 30,
-      location: 'New York',
+      bio: "Full-stack developer passionate about React and modern web technologies",
+      location: "Mumbai, India",
+      website: "https://dipak.dev",
       preferences: {
-        theme: 'light',
-        notifications: true,
-        language: 'en'
+        theme: "dark",
+        language: "en",
+        notifications: true
       }
     },
     settings: {
-      privacy: 'public',
-      emailNotifications: true
+      privacy: "public",
+      timezone: "Asia/Kolkata",
+      currency: "INR"
     }
   });
 
   const [editMode, setEditMode] = useState(false);
   const [editData, setEditData] = useState({ ...user });
 
-  // Update simple properties
+  // Update nested object properties
   const updateName = (newName) => {
     setUser(prev => ({
       ...prev,
       name: newName
+    }));
+  };
+
+  const updateAge = (newAge) => {
+    setUser(prev => ({
+      ...prev,
+      age: parseInt(newAge) || 0
     }));
   };
 
@@ -41,13 +52,12 @@ export default function ObjectExample() {
     }));
   };
 
-  // Update nested properties
-  const updateAge = (newAge) => {
+  const updateBio = (newBio) => {
     setUser(prev => ({
       ...prev,
       profile: {
         ...prev.profile,
-        age: newAge
+        bio: newBio
       }
     }));
   };
@@ -62,7 +72,16 @@ export default function ObjectExample() {
     }));
   };
 
-  // Update deeply nested properties
+  const updateWebsite = (newWebsite) => {
+    setUser(prev => ({
+      ...prev,
+      profile: {
+        ...prev.profile,
+        website: newWebsite
+      }
+    }));
+  };
+
   const updateTheme = (newTheme) => {
     setUser(prev => ({
       ...prev,
@@ -71,19 +90,6 @@ export default function ObjectExample() {
         preferences: {
           ...prev.profile.preferences,
           theme: newTheme
-        }
-      }
-    }));
-  };
-
-  const toggleNotifications = () => {
-    setUser(prev => ({
-      ...prev,
-      profile: {
-        ...prev.profile,
-        preferences: {
-          ...prev.profile.preferences,
-          notifications: !prev.profile.preferences.notifications
         }
       }
     }));
@@ -102,7 +108,6 @@ export default function ObjectExample() {
     }));
   };
 
-  // Update settings
   const updatePrivacy = (newPrivacy) => {
     setUser(prev => ({
       ...prev,
@@ -113,207 +118,264 @@ export default function ObjectExample() {
     }));
   };
 
-  const toggleEmailNotifications = () => {
-    setUser(prev => ({
-      ...prev,
-      settings: {
-        ...prev.settings,
-        emailNotifications: !prev.settings.emailNotifications
-      }
-    }));
+  const toggleEditMode = () => {
+    if (editMode) {
+      // Save changes
+      setUser(editData);
+    } else {
+      // Enter edit mode
+      setEditData({ ...user });
+    }
+    setEditMode(!editMode);
   };
 
-  // Reset to default values
-  const resetUser = () => {
-    setUser({
-      name: 'John Doe',
-      email: 'john@example.com',
-      profile: {
-        age: 30,
-        location: 'New York',
-        preferences: {
-          theme: 'light',
-          notifications: true,
-          language: 'en'
-        }
-      },
-      settings: {
-        privacy: 'public',
-        emailNotifications: true
+  const handleEditChange = (path, value) => {
+    const keys = path.split('.');
+    setEditData(prev => {
+      const newData = { ...prev };
+      let current = newData;
+      
+      for (let i = 0; i < keys.length - 1; i++) {
+        current = current[keys[i]];
       }
+      
+      current[keys[keys.length - 1]] = value;
+      return newData;
     });
   };
 
-  const handleEditSave = () => {
-    setUser(editData);
-    setEditMode(false);
-  };
-
-  const handleEditCancel = () => {
+  const cancelEdit = () => {
     setEditData({ ...user });
     setEditMode(false);
   };
 
   return (
     <div className="state-example">
-      <h3>Object State Management Example</h3>
-      
+      <h3>🏗️ Complex Object State Management</h3>
+      <p>Managing nested objects with immutable updates and complex state structures.</p>
+
       <div className="user-display">
-        <h4>Current User State:</h4>
-        <div className="user-info">
-          <p><strong>Name:</strong> {user.name}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Age:</strong> {user.profile.age}</p>
-          <p><strong>Location:</strong> {user.profile.location}</p>
-          <p><strong>Theme:</strong> {user.profile.preferences.theme}</p>
-          <p><strong>Notifications:</strong> {user.profile.preferences.notifications ? 'On' : 'Off'}</p>
-          <p><strong>Language:</strong> {user.profile.preferences.language}</p>
-          <p><strong>Privacy:</strong> {user.settings.privacy}</p>
-          <p><strong>Email Notifications:</strong> {user.settings.emailNotifications ? 'On' : 'Off'}</p>
+        <h4>👤 User Profile</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Name:</strong> {user.name}
+          </div>
+          <div className="profile-field">
+            <strong>Age:</strong> {user.age}
+          </div>
+          <div className="profile-field">
+            <strong>Email:</strong> {user.email}
+          </div>
+        </div>
+
+        <h4>📝 Profile Details</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Bio:</strong> {user.profile.bio}
+          </div>
+          <div className="profile-field">
+            <strong>Location:</strong> {user.profile.location}
+          </div>
+          <div className="profile-field">
+            <strong>Website:</strong> <a href={user.profile.website} target="_blank" rel="noopener noreferrer">{user.profile.website}</a>
+          </div>
+        </div>
+
+        <h4>⚙️ Preferences</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Theme:</strong> {user.profile.preferences.theme}
+          </div>
+          <div className="profile-field">
+            <strong>Language:</strong> {user.profile.preferences.language}
+          </div>
+          <div className="profile-field">
+            <strong>Notifications:</strong> {user.profile.preferences.notifications ? 'On' : 'Off'}
+          </div>
+        </div>
+
+        <h4>🔒 Settings</h4>
+        <div className="profile-section">
+          <div className="profile-field">
+            <strong>Privacy:</strong> {user.settings.privacy}
+          </div>
+          <div className="profile-field">
+            <strong>Timezone:</strong> {user.settings.timezone}
+          </div>
+          <div className="profile-field">
+            <strong>Currency:</strong> {user.settings.currency}
+          </div>
         </div>
       </div>
 
-      <div className="state-actions">
-        <h4>Update Individual Properties:</h4>
+      <div className="controls-section">
+        <h4>🎛️ Quick Updates</h4>
+        <div className="control-group">
+          <label>Name:</label>
+          <input
+            type="text"
+            value={user.name}
+            onChange={(e) => updateName(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new name"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Age:</label>
+          <input
+            type="number"
+            value={user.age}
+            onChange={(e) => updateAge(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new age"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={user.email}
+            onChange={(e) => updateEmail(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new email"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Bio:</label>
+          <input
+            type="text"
+            value={user.profile.bio}
+            onChange={(e) => updateBio(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new bio"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Location:</label>
+          <input
+            type="text"
+            value={user.profile.location}
+            onChange={(e) => updateLocation(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new location"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Website:</label>
+          <input
+            type="url"
+            value={user.profile.website}
+            onChange={(e) => updateWebsite(e.target.value)}
+            className="modern-input"
+            placeholder="Enter new website"
+          />
+        </div>
+
+        <div className="control-group">
+          <label>Theme:</label>
+          <select value={user.profile.preferences.theme} onChange={(e) => updateTheme(e.target.value)} className="modern-select">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="auto">Auto</option>
+          </select>
+        </div>
+
+        <div className="control-group">
+          <label>Language:</label>
+          <select value={user.profile.preferences.language} onChange={(e) => updateLanguage(e.target.value)} className="modern-select">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="gu">Gujarati</option>
+          </select>
+        </div>
+
+        <div className="control-group">
+          <label>Privacy:</label>
+          <select value={user.settings.privacy} onChange={(e) => updatePrivacy(e.target.value)} className="modern-select">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+            <option value="friends">Friends Only</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="edit-form">
+        <h4>✏️ Bulk Edit Mode</h4>
+        <p>Edit multiple fields at once and save all changes together.</p>
         
-        <div className="action-group">
-          <h5>Basic Properties</h5>
-          <div>
-            <input
-              type="text"
-              value={user.name}
-              onChange={(e) => updateName(e.target.value)}
-              placeholder="Update name"
-            />
-            <input
-              type="email"
-              value={user.email}
-              onChange={(e) => updateEmail(e.target.value)}
-              placeholder="Update email"
-            />
-          </div>
-        </div>
-
-        <div className="action-group">
-          <h5>Profile Properties</h5>
-          <div>
-            <input
-              type="number"
-              value={user.profile.age}
-              onChange={(e) => updateAge(parseInt(e.target.value) || 0)}
-              placeholder="Update age"
-            />
-            <input
-              type="text"
-              value={user.profile.location}
-              onChange={(e) => updateLocation(e.target.value)}
-              placeholder="Update location"
-            />
-          </div>
-        </div>
-
-        <div className="action-group">
-          <h5>Preferences</h5>
-          <div>
-            <select value={user.profile.preferences.theme} onChange={(e) => updateTheme(e.target.value)}>
-              <option value="light">Light Theme</option>
-              <option value="dark">Dark Theme</option>
-              <option value="auto">Auto Theme</option>
-            </select>
-            
-            <button onClick={toggleNotifications}>
-              {user.profile.preferences.notifications ? 'Disable' : 'Enable'} Notifications
+        <div className="form-actions">
+          <button onClick={toggleEditMode} className="modern-button primary">
+            {editMode ? '💾 Save Changes' : '✏️ Enter Edit Mode'}
+          </button>
+          {editMode && (
+            <button onClick={cancelEdit} className="modern-button secondary">
+              ❌ Cancel
             </button>
-            
-            <select value={user.profile.preferences.language} onChange={(e) => updateLanguage(e.target.value)}>
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
-              <option value="fr">French</option>
-              <option value="de">German</option>
-            </select>
-          </div>
+          )}
         </div>
 
-        <div className="action-group">
-          <h5>Settings</h5>
-          <div>
-            <select value={user.settings.privacy} onChange={(e) => updatePrivacy(e.target.value)}>
-              <option value="public">Public</option>
-              <option value="private">Private</option>
-              <option value="friends">Friends Only</option>
-            </select>
-            
-            <button onClick={toggleEmailNotifications}>
-              {user.settings.emailNotifications ? 'Disable' : 'Enable'} Email Notifications
-            </button>
-          </div>
-        </div>
-
-        <div className="action-group">
-          <h5>Bulk Actions</h5>
-          <button onClick={resetUser}>Reset to Default</button>
-          <button onClick={() => setEditMode(true)}>Edit All Properties</button>
-        </div>
-      </div>
-
-      {editMode && (
-        <div className="edit-mode">
-          <h4>Edit All Properties</h4>
-          <div className="edit-form">
-            <div>
+        {editMode && (
+          <div className="edit-fields">
+            <div className="control-group">
               <label>Name:</label>
               <input
                 type="text"
                 value={editData.name}
-                onChange={(e) => setEditData(prev => ({ ...prev, name: e.target.value }))}
+                onChange={(e) => handleEditChange('name', e.target.value)}
+                className="modern-input"
+                placeholder="Enter new name"
               />
             </div>
-            <div>
+
+            <div className="control-group">
+              <label>Age:</label>
+              <input
+                type="number"
+                value={editData.age}
+                onChange={(e) => handleEditChange('age', parseInt(e.target.value) || 0)}
+                className="modern-input"
+                placeholder="Enter new age"
+              />
+            </div>
+
+            <div className="control-group">
               <label>Email:</label>
               <input
                 type="email"
                 value={editData.email}
-                onChange={(e) => setEditData(prev => ({ ...prev, email: e.target.value }))}
+                onChange={(e) => handleEditChange('email', e.target.value)}
+                className="modern-input"
+                placeholder="Enter new email"
               />
             </div>
-            <div>
-              <label>Age:</label>
-              <input
-                type="number"
-                value={editData.profile.age}
-                onChange={(e) => setEditData(prev => ({
-                  ...prev,
-                  profile: { ...prev.profile, age: parseInt(e.target.value) || 0 }
-                }))}
-              />
-            </div>
-            <div>
-              <label>Location:</label>
+
+            <div className="control-group">
+              <label>Bio:</label>
               <input
                 type="text"
-                value={editData.profile.location}
-                onChange={(e) => setEditData(prev => ({
-                  ...prev,
-                  profile: { ...prev.profile, location: e.target.value }
-                }))}
+                value={editData.profile.bio}
+                onChange={(e) => handleEditChange('profile.bio', e.target.value)}
+                className="modern-input"
+                placeholder="Enter new bio"
               />
             </div>
-            <div className="edit-actions">
-              <button onClick={handleEditSave}>Save All</button>
-              <button onClick={handleEditCancel}>Cancel</button>
-            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       <div className="code-explanation">
         <h4>Key Concepts:</h4>
         <ul>
-          <li><strong>Object state</strong> - Managing complex object structures</li>
-          <li><strong>Immutable updates</strong> - Spread operator for nested updates</li>
-          <li><strong>Nested state</strong> - Updating deeply nested properties</li>
-          <li><strong>State structure</strong> - Organizing related data together</li>
-          <li><strong>Bulk updates</strong> - Editing multiple properties at once</li>
+          <li><strong>Nested objects</strong> - Complex state structures with multiple levels</li>
+          <li><strong>Immutable updates</strong> - Spread operator for safe state updates</li>
+          <li><strong>Deep cloning</strong> - Copying nested objects without mutations</li>
+          <li><strong>Path-based updates</strong> - Dynamic property updates using string paths</li>
+          <li><strong>Bulk editing</strong> - Edit multiple fields before saving</li>
         </ul>
       </div>
     </div>

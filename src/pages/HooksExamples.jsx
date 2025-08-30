@@ -7,6 +7,7 @@ import {
   useCallbackExample,
   CustomHooksExample
 } from '../examples/hooks-example';
+import '../examples/hooks-example/HooksExample.css';
 
 
 /**
@@ -58,12 +59,21 @@ const HooksExamples = () => {
   ];
 
   const handleExampleChange = (exampleId) => {
+    console.log('🎯 handleExampleChange called with:', exampleId);
+    console.log('🔄 Previous active example:', activeExample);
+    
     setActiveExample(exampleId);
+    
     // Scroll to top when changing examples
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    console.log('✅ State updated, new active example should be:', exampleId);
   };
 
   const ActiveComponent = examples.find(ex => ex.id === activeExample)?.component;
+  
+  console.log('Active example:', activeExample);
+  console.log('Active component:', ActiveComponent);
 
   return (
     <div className="page">
@@ -73,23 +83,68 @@ const HooksExamples = () => {
           Master React Hooks from beginner to intermediate level. Learn useEffect, useRef, useContext, 
           useMemo, useCallback, and how to build custom hooks.
         </p>
+        <div style={{ marginTop: '20px', padding: '10px', background: 'rgba(255,255,255,0.2)', borderRadius: '8px' }}>
+          <p style={{ margin: '0 0 10px 0' }}><strong>Debug Info:</strong></p>
+          <p style={{ margin: '5px 0' }}>Active Example: <code>{activeExample}</code></p>
+          <p style={{ margin: '5px 0' }}>Available Examples: <code>{examples.map(ex => ex.id).join(', ')}</code></p>
+          <button 
+            onClick={() => handleExampleChange('useRef')}
+            style={{ 
+              background: '#fff', 
+              color: '#333', 
+              border: 'none', 
+              padding: '8px 16px', 
+              borderRadius: '4px', 
+              cursor: 'pointer',
+              marginRight: '10px'
+            }}
+          >
+            Test: Switch to useRef
+          </button>
+          <button 
+            onClick={() => handleExampleChange('useEffect')}
+            style={{ 
+              background: '#fff', 
+              color: '#333', 
+              border: 'none', 
+              padding: '8px 16px', 
+              borderRadius: '4px', 
+              cursor: 'pointer'
+            }}
+          >
+            Test: Switch to useEffect
+          </button>
+        </div>
       </div>
 
       <div className="page-content">
         {/* Navigation Tabs */}
-        <div className="examples-navigation">
-          <div className="nav-tabs">
+        <div className="examples-navigation" style={{ background: 'white', borderRadius: '16px', padding: '25px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)', border: '1px solid #e1e8ed' }}>
+          <div className="nav-tabs" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
             {examples.map((example) => (
               <button
                 key={example.id}
                 onClick={() => handleExampleChange(example.id)}
                 className={`nav-tab ${activeExample === example.id ? 'active' : ''}`}
+                style={{
+                  background: activeExample === example.id ? 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)' : 'white',
+                  border: '2px solid #e1e8ed',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  textAlign: 'left',
+                  minHeight: '100px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: activeExample === example.id ? 'white' : 'inherit'
+                }}
               >
-                <div className="tab-content">
-                  <div className="tab-icon">{example.name.split(' ')[0]}</div>
-                  <div className="tab-details">
-                    <div className="tab-name">{example.name.split(' ').slice(1).join(' ')}</div>
-                    <div className="tab-description">{example.description}</div>
+                <div className="tab-content" style={{ display: 'flex', alignItems: 'center', gap: '15px', width: '100%' }}>
+                  <div className="tab-icon" style={{ fontSize: '2rem', minWidth: '50px', textAlign: 'center' }}>{example.name.split(' ')[0]}</div>
+                  <div className="tab-details" style={{ flex: 1 }}>
+                    <div className="tab-name" style={{ fontWeight: 600, fontSize: '1.1rem', marginBottom: '5px' }}>{example.name.split(' ').slice(1).join(' ')}</div>
+                    <div className="tab-description" style={{ fontSize: '0.9rem', opacity: 0.8, lineHeight: 1.4 }}>{example.description}</div>
                   </div>
                 </div>
               </button>
@@ -99,7 +154,15 @@ const HooksExamples = () => {
 
         {/* Active Example Display */}
         <div className="example-display">
-          {ActiveComponent && <ActiveComponent />}
+          {ActiveComponent ? (
+            <ActiveComponent />
+          ) : (
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              <p>Loading component...</p>
+              <p>Active example: {activeExample}</p>
+              <p>Available components: {examples.map(ex => ex.id).join(', ')}</p>
+            </div>
+          )}
         </div>
 
         {/* Learning Path */}

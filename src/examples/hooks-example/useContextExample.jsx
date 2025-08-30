@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useMemo } from 'react';
-import './HooksExample.css';
 
 // Create a theme context
 const ThemeContext = createContext();

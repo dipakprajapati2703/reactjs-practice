@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useMemo, memo } from 'react';
-import './HooksExample.css';
 
 /**
  * useCallback Hook Examples

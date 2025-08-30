@@ -38,15 +38,16 @@ src/examples/
 │   ├── FormExample.jsx    # Controlled form inputs
 │   ├── ListExample.jsx    # Array state management
 │   └── ObjectExample.jsx  # Object state updates
-└── hooks-example/          # React hooks patterns
-    ├── README.md          # Hooks examples guide
-    ├── index.js           # Component exports
-    ├── useEffectExample.jsx # Side effects and cleanup
-    ├── useRefExample.jsx  # DOM manipulation and refs
-    ├── useContextExample.jsx # Context API and providers
-    ├── useMemoExample.jsx # Performance optimization
-    ├── useCallbackExample.jsx # Stable function references
-    └── CustomHooksExample.jsx # Custom hooks patterns
+├── hooks-example/          # React hooks patterns
+│   ├── README.md          # Hooks examples guide
+│   ├── index.js           # Component exports
+│   ├── useEffectExample.jsx # Side effects and cleanup
+│   ├── useRefExample.jsx  # DOM manipulation and refs
+│   ├── useContextExample.jsx # Context API and providers
+│   ├── useMemoExample.jsx # Performance optimization
+│   ├── useCallbackExample.jsx # Stable function references
+│   └── CustomHooksExample.jsx # Custom hooks patterns
+└── shared-styles.css      # Common styling for all examples
 ```
 
 ## 🎯 What Each Directory Contains
@@ -62,6 +63,7 @@ src/examples/
 - **Event handling** between parent and child
 - **Conditional rendering** based on props
 - **Component composition** examples
+- **Beautiful card-based UI** with responsive design and smooth animations
 
 ### **`state-example/` - State Management**
 - **useState hook** examples with counter, toggles, and forms
@@ -69,6 +71,7 @@ src/examples/
 - **Immutable updates** for objects and arrays
 - **Form handling** and user interactions
 - **Array and object** state management patterns
+- **Beautiful card-based UI** with responsive design and smooth animations
 
 ### **`hooks-example/` - React Hooks Patterns**
 - **useEffect hook** for side effects and cleanup
@@ -77,6 +80,7 @@ src/examples/
 - **useMemo hook** for performance optimization and memoization
 - **useCallback hook** for stable function references
 - **Custom hooks** for reusable logic patterns
+- **Beautiful card-based UI** with responsive design and smooth animations
 
 ## 🚀 How to Use These Examples
 

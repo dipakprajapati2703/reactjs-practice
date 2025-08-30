@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './HooksExample.css';
 
 /**
  * useRef Hook Examples

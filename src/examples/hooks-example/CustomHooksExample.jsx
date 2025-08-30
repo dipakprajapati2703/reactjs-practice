@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './HooksExample.css';
 
 /**
  * Custom Hooks Examples

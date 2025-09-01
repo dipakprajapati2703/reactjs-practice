@@ -148,6 +148,22 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Next Steps */}
+      <div className="next-steps">
+        <h2>🚀 Next Steps</h2>
+        <div className="steps-content">
+          <p>Ready to start learning? Begin your React.js journey with these fundamentals:</p>
+          <ul>
+            <li><strong>ES6+ JavaScript:</strong> Master modern JavaScript features and syntax</li>
+            <li><strong>React Props:</strong> Learn how to pass data between components</li>
+            <li><strong>State Management:</strong> Understand component state and lifecycle</li>
+            <li><strong>React Hooks:</strong> Explore modern React patterns and custom hooks</li>
+            <li><strong>Best Practices:</strong> Build scalable and maintainable applications</li>
+            <li><strong>Real Projects:</strong> Apply your knowledge to build real applications</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

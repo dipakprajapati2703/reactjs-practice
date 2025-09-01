@@ -1437,7 +1437,7 @@
   padding-left: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -1465,6 +1465,19 @@
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, #3498db, #9b59b6);
+}
+
+/* Responsive 2-column layout for next-steps */
+@media (max-width: 768px) {
+  .steps-content ul {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .steps-content li {
+    padding: 18px;
+    min-height: 70px;
+  }
 }
 
 .steps-content li:hover {
